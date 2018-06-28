@@ -1,0 +1,50 @@
+{
+  "context-menu": {
+    "atom-text-editor": [
+      {
+        "label": "Build Robot Code",
+        "command": "wpilib:build"
+      },
+      {
+        "label": "Deploy Robot Code",
+        "command": "wpilib:deploy"
+      }
+    ]
+  },
+  "menu": [
+    {
+      "label": "Packages",
+      "submenu": [
+        {
+          "label": "WPILib",
+          "submenu": [
+            {
+              "label": "Build Robot Code",
+              "command": "wpilib:build"
+            },
+            {
+              "label": "Deploy Robot Code",
+              "command": "wpilib:deploy"
+            },
+            {
+              "label": "Start SmartDashboard",
+              "command": "wpilib:start-smartdashboard"
+            },
+            {
+              "label": "Start Shuffleboard",
+              "command": "wpilib:start-shuffleboard"
+            },
+            {
+              "label": "Show RIOLog",
+              "command": "wpilib:start-riolog"
+            },
+            {
+              "label": "Install C++ Toolchains",
+              "command": "wpilib:install-toolchain"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+plugins {
+    id "java"
+    id "eclipse"
+    id "idea"
+    id "jaci.openrio.gradle.GradleRIO" version "2018.03.06"
+}
+
+def TEAM = 6204
+def ROBOT_CLASS = "frc.team000.robot.Robot"
+def DEPENDENCIES = [] as String[]
+def TARGETS = [] as String[]
+def DEBUG = false
+
+if (project.hasProperty('teamNumber')) {
+  TEAM = teamNumber.toInteger()
+}
+if (project.hasProperty('robotClass')) {
+  ROBOT_CLASS = robotClass
+}
+if (project.hasProperty('frcDependencies')) {
+  DEPENDENCIES = frcDependencies.split(',')
+}
+if (project.hasProperty('targets')) {
+  TARGETS = targets.split(',')
+}
+if (project.hasProperty('debug')) {
+  DEBUG = debug
+}
+
+// Define my targets (RoboRIO) and artifacts (deployable files)
+// This is added by GradleRIO's backing project EmbeddedTools.
+deploy {
+    targets {
+        target("roborio", jaci.openrio.gradle.frc.RoboRIO) {
+            team = TEAM
+        }
+    }
+    artifacts {
+        artifact('frcJava', jaci.openrio.gradle.frc.FRCJavaArtifact) {
+            targets << "roborio"
+            TARGETS.each {
+              targets << it
+            }
+            debug = DEBUG
+        }
+    }
+}
+
+// Defining my dependencies. In this case, WPILib (+ friends), CTRE Phoenix (Talon SRX)
+// and NavX.
+dependencies {
+    compile wpilib()
+    compile ctre()
+    compile navx()
+    compile openrio.powerup.matchData()
+    DEPENDENCIES.each {
+      compile fileTree(dir: new File(it).absolutePath, include: "**/*.jar")
+    }
+    // compile fileTree(dir: new File(System.getProperty("user.home"), "wpilib/user/java/lib").absolutePath, include: "**/*.jar")
+}
+
+// Setting up my Jar File. In this case, adding all libraries into the main jar ('fat jar')
+// in order to make them all available at runtime. Also adding the manifest so WPILib
+// knows where to look for our Robot Class.
+jar {
+    from configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+    manifest jaci.openrio.gradle.GradleRIOPlugin.javaManifest(ROBOT_CLASS)
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '4.4'
+}

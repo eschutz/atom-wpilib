@@ -1,0 +1,10 @@
+{
+  ".platform-darwin atom-workspace": {
+    "alt-cmd-r": "wpilib:deploy",
+    "alt-cmd-x": "wpilib:build"
+  },
+  ".platform-win32 atom-workspace, .platform-linux atom-workspace": {
+    "alt-ctrl-r": "wpilib:deploy",
+    "alt-ctrl-x": "wpilib:build"
+  }
+}

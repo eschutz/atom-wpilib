@@ -1,0 +1,60 @@
+{
+  "name": "atom-wpilib",
+  "main": "./lib/atom-wpilib",
+  "version": "0.0.0",
+  "description": "WPILib development in Atom",
+  "keywords": [
+    "wpilib",
+    "first",
+    "frc",
+    "gradle",
+    "java",
+    "c++",
+    "robot",
+    "robotics"
+  ],
+  "activationCommands": {
+    "atom-workspace": [
+      "wpilib:generate-project",
+      "wpilib:update-templates",
+      "wpilib:update-examples",
+      "wpilib:view-example",
+      "wpilib:generate-new-command",
+      "wpilib:build",
+      "wpilib:deploy",
+      "wpilib:start-riolog",
+      "wpilib:install-toolchain"
+    ]
+  },
+  "repository": "https://github.com/eschutz/atom-wpilib",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "dependencies": {
+    "atom-package-deps": "^4.6.2",
+    "xml2js": "^0.4.19",
+    "atom-select-list": "^0.7.1",
+    "ls-archive": "^1.2.5",
+    "temp": "^0.8.3"
+  },
+  "package-deps": [
+    "build",
+    "busy-signal"
+  ],
+  "consumedServices": {
+    "busy-signal": {
+      "versions": {
+        "^1.0.0": "consumeSignal"
+      }
+    }
+  },
+  "providedServices": {
+    "builder": {
+      "description": "Runs GradleRIO build",
+      "versions": {
+        "2.0.0": "provideBuilder"
+      }
+    }
+  }
+}

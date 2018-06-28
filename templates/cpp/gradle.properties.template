@@ -1,0 +1,3 @@
+teamNumber=${teamNumber}
+frcDependencies=${frcDependencies}
+debug=${debug}

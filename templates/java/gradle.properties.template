@@ -1,0 +1,4 @@
+teamNumber=${teamNumber}
+robotClass=frc.team${teamNumber}.robot.Robot
+frcDependencies=${frcDependencies}
+debug=${debug}

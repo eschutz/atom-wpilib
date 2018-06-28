@@ -1,0 +1,102 @@
+// The ui-variables file is provided by base themes provided by Atom.
+//
+// See https://github.com/atom/atom-dark-ui/blob/master/styles/ui-variables.less
+// for a full listing of what's available.
+@import "ui-variables";
+
+// Thanks to settings-view for most of the styling
+
+.atom-wpilib {
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  padding: 20px;
+
+  .option {
+    position: relative;
+    width: 100%;
+    display: inline-block;
+    line-height: 1.87;
+  }
+
+  .option-checkbox {
+    line-height: 1.2em;
+  }
+
+  .subtitle {
+    font-size: 1.25em;
+    font-weight: bold;
+    padding-right: 15px;
+    padding-bottom: 5px;
+    float: left;
+  }
+
+  select.form-control {
+    color: @text-color;
+    border-color: @button-border-color;
+    background-color: @button-background-color;
+    font-size: 1.25em;
+    height: 2em;
+    padding-top: 0;
+    padding-bottom: 0;
+    &:hover,
+    &:focus {
+      box-shadow: none;
+      background-color: @button-background-color-hover;
+    }
+  }
+
+  .option-container {
+    display: flex;
+    align-items: stretch;
+  }
+
+  .text-path {
+    float: left;
+    width: 100%;
+  }
+
+  .select-path {
+    margin-left: 0.8em;
+    height: 27px;
+    padding: 0 inherit;
+    &::before {
+      margin-right: 0;
+      text-align: left;
+    }
+  }
+
+  .section-advanced {
+    position: relative;
+  }
+
+  .title-container {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 2px;
+    &:hover {
+      background: fadein(@panel-heading-background-color, 30%);
+    }
+  }
+
+  .btn-collapse {
+    float: left;
+  }
+
+  .advanced-title {
+    .subtitle;
+  }
+
+  .advanced-content {
+    display: none;
+    padding: 0 15px 15px 15px;
+  }
+
+  .create-project {
+    position: relative;
+    float: right;
+  }
+}
