@@ -8,10 +8,10 @@
     "first",
     "frc",
     "gradle",
+    "robotics",
     "java",
     "c++",
-    "robot",
-    "robotics"
+    "robot"
   ],
   "activationCommands": {
     "atom-workspace": [

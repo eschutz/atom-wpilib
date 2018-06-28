@@ -5,3 +5,7 @@ examples/cpp/*.zip
 examples/cpp/*.sha1
 templates/cpp/*.zip
 templates/cpp/*.sha1
+examples/java/*.zip
+examples/java/*.sha1
+templates/java/*.zip
+templates/java/*.sha1
