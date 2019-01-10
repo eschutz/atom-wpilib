@@ -1,7 +1,7 @@
 {
   "name": "atom-wpilib",
   "main": "./lib/atom-wpilib",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "WPILib development in Atom",
   "keywords": [
     "wpilib",
