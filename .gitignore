@@ -9,3 +9,5 @@ examples/java/*.zip
 examples/java/*.sha1
 templates/java/*.zip
 templates/java/*.sha1
+templates/*.zip
+.jshintrc
