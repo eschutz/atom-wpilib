@@ -1,4 +1,7 @@
-## 0.1.1
+## 0.1.3
+
+
+## 0.1.2
 * Fixed an issue finding the home directory on Windows which caused installation to fail
 
 ## 0.1.0 - First Release
