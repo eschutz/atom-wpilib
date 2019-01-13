@@ -18,4 +18,4 @@ To first set up, you'll need to navigate to `Settings > Packages > atom-wpilib` 
 - Other features such as launching RIOLog and Shuffleboard are available under the `Packages > WPILib` menu (there must be a GradleRIO project open for these to work)
 
 ## Contributing
-Bug reports and suggestions are welcome in the [issues section](https://github.com/eschutz/atom-wpilib.git).
+Bug reports and suggestions are welcome in the [issues section](https://github.com/eschutz/atom-wpilib).
